@@ -22,6 +22,7 @@ import { getSetting } from './services/settings.js';
 
 import authRoutes from './routes/auth.js';
 import telemetryRoutes from './routes/telemetry.js';
+import webhookRoutes from './routes/webhook.js';
 import jobRoutes from './routes/jobs.js';
 import filesRoutes, { shareRouter } from './routes/files.js';
 import historyRoutes from './routes/history.js';
@@ -62,6 +63,7 @@ app.use((req, res, next) => {
 });
 
 // ---------------- API ----------------
+app.use('/webhook', webhookRoutes);
 app.use('/api', healthRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api', telemetryRoutes);
