@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+!.env.example
+data/
+storage/
+*.db
+*.db-wal
+*.db-shm
+*.log
+.DS_Store
+dist/
+coverage/
+# หมายเหตุ: ฟอนต์ Sarabun (SIL OFL) และไลบรารีใน web/assets/vendor
+# ถูก commit เข้ามาด้วยตั้งใจ เพื่อให้ระบบทำงานได้ทันทีโดยไม่ต้องต่ออินเทอร์เน็ต
+# สร้างใหม่ได้ด้วย: node scripts/fetch-fonts.mjs และ node scripts/build-vendor.mjs

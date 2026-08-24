@@ -1,0 +1,26 @@
+{
+  "name": "DT PDF Editor",
+  "short_name": "DT PDF",
+  "description": "เครื่องมือ PDF ครบจบในที่เดียว ใช้ง่าย รวดเร็ว และปลอดภัย",
+  "lang": "th",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eef2f8",
+  "theme_color": "#2563eb",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    { "src": "/assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "รวมไฟล์ PDF", "url": "/tool/merge" },
+    { "name": "แยกไฟล์ PDF", "url": "/tool/split" },
+    { "name": "สแกนเอกสาร", "url": "/scan" },
+    { "name": "เซ็นเอกสาร PDF", "url": "/tool/sign" }
+  ]
+}

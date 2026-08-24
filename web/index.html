@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DT PDF Editor — เครื่องมือ PDF ครบจบในที่เดียว</title>
+<meta name="description" content="เครื่องมือจัดการ PDF ออนไลน์ รวม แยก ลดขนาด แปลงไฟล์ เซ็นเอกสาร ใส่ลายน้ำ ประมวลผลบนเครื่องคุณเอง ไฟล์ไม่ถูกอัปโหลด ใช้งานฟรีบนมือถือและคอมพิวเตอร์">
+<meta name="theme-color" content="#2563eb">
+<meta name="color-scheme" content="light dark">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+<link rel="preload" href="/assets/fonts/Sarabun-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/assets/css/app.css?v=__CACHE_VERSION__">
+<script>window.__DTPDF_BOOTSTRAP__ = __BOOTSTRAP__;</script>
+</head>
+<body>
+<a class="skip-link" href="#main">ข้ามไปยังเนื้อหาหลัก</a>
+
+<div class="app" id="app">
+  <nav class="bottom-nav" id="bottom-nav" aria-label="เมนูหลัก"></nav>
+
+  <div class="app__main-col">
+    <header class="app-header">
+      <div class="container app-header__bar">
+        <a class="brand" href="/" data-link aria-label="กลับหน้าแรก">
+          <span class="brand__logo" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#e11d48"/>
+              <path d="M13 2v5h5" fill="#fb7185"/>
+              <text x="12" y="17" font-size="7" font-weight="700" fill="#fff" text-anchor="middle" font-family="sans-serif">PDF</text>
+            </svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__title" id="brand-title">DT PDF Editor</span>
+            <span class="brand__subtitle" id="brand-subtitle">เครื่องมือ PDF ครบจบในที่เดียว</span>
+          </span>
+        </a>
+        <div class="header-actions" id="header-actions"></div>
+      </div>
+    </header>
+
+    <main id="main" class="container" tabindex="-1">
+      <div id="view" aria-live="polite"></div>
+    </main>
+
+    <footer class="container" style="padding-block:20px 32px;text-align:center;font-size:12.5px;color:var(--text-muted)">
+      <div><strong id="footer-name">DT PDF Editor</strong> — เร็ว · เป็นส่วนตัว · ใช้ง่าย</div>
+      <div style="margin-top:6px">
+        <a href="/privacy" data-link>นโยบายความเป็นส่วนตัว</a> ·
+        <a href="/status" data-link>สถานะระบบ</a> ·
+        <a href="/help" data-link>ช่วยเหลือ</a>
+      </div>
+      <div style="margin-top:6px" id="footer-org"></div>
+      <div id="footer-credit" class="footer-credit"></div>
+    </footer>
+  </div>
+</div>
+
+<div class="toast-stack" id="toast-stack" role="status" aria-live="polite"></div>
+<div id="modal-root"></div>
+
+<noscript>
+  <div style="padding:24px;text-align:center">
+    <h1>ต้องเปิดใช้งาน JavaScript</h1>
+    <p>ระบบนี้ประมวลผลไฟล์ PDF บนเครื่องของคุณโดยตรง จึงจำเป็นต้องเปิดใช้งาน JavaScript</p>
+  </div>
+</noscript>
+
+<script type="module" src="/src/main.js?v=__CACHE_VERSION__"></script>
+</body>
+</html>

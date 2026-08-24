@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>แผงผู้ดูแลระบบ — DT PDF Editor</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/app.css?v=__CACHE_VERSION__">
+<link rel="stylesheet" href="/assets/css/admin.css?v=__CACHE_VERSION__">
+<script>window.__DTPDF_BOOTSTRAP__ = __BOOTSTRAP__;</script>
+</head>
+<body class="admin-body">
+<header class="app-header">
+  <div class="container app-header__bar">
+    <a class="brand" href="/admin">
+      <span class="brand__logo" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/>
+        </svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__title">แผงผู้ดูแลระบบ</span>
+        <span class="brand__subtitle" id="admin-subtitle">DT PDF Editor</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <span class="stat-pill" style="padding:8px 13px">
+        <span class="live-dot"></span><strong id="hdr-online">0</strong><span>ออนไลน์</span>
+      </span>
+      <a class="icon-btn" href="/" title="กลับหน้าเว็บหลัก" aria-label="กลับหน้าเว็บหลัก">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+      </a>
+      <button class="icon-btn" id="admin-logout" title="ออกจากระบบ" aria-label="ออกจากระบบ">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="admin-tabs container" id="admin-tabs" role="tablist"></nav>
+
+<main class="container" style="padding-block:8px 40px">
+  <div id="admin-view" aria-live="polite"></div>
+</main>
+
+<footer class="container" style="padding-block:0 28px;text-align:center">
+  <div class="footer-credit" id="footer-credit"></div>
+</footer>
+
+<div class="toast-stack" id="toast-stack" role="status" aria-live="polite"></div>
+<div id="modal-root"></div>
+<script type="module" src="/src/admin/main.js?v=__CACHE_VERSION__"></script>
+</body>
+</html>

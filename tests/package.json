@@ -1,0 +1,14 @@
+{
+  "name": "dt-pdf-editor-tests",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ชุดทดสอบ end-to-end ของ DT PDF Editor",
+  "scripts": {
+    "test": "node e2e.mjs",
+    "setup": "npm install && npx playwright install chromium"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

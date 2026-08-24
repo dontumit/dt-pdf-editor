@@ -1,0 +1,37 @@
+{
+  "name": "dt-pdf-editor-server",
+  "version": "1.0.0",
+  "description": "DT PDF Editor — Backend API (Express + SQLite)",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "migrate": "node src/db/migrate.js",
+    "worker": "node src/workers/standalone.js",
+    "test": "node --test test/",
+    "build:vendor": "node ../scripts/build-vendor.mjs",
+    "postinstall": "node ../scripts/build-vendor.mjs || true"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "docx": "^9.0.2",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "pdfjs-dist": "^4.8.69"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^11.5.0",
+    "tesseract.js": "^5.1.1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "jszip": "^3.10.1",
+    "pdf-lib": "^1.17.1"
+  }
+}

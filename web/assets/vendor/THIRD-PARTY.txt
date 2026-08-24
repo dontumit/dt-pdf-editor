@@ -1,0 +1,7 @@
+Third-party libraries bundled in this folder
+
+- pdf-lib (MIT) https://github.com/Hopding/pdf-lib
+- @pdf-lib/fontkit (MIT) https://github.com/Hopding/fontkit
+- pdfjs-dist (Apache-2.0) https://github.com/mozilla/pdf.js
+- JSZip (MIT / GPLv3 dual) https://github.com/Stuk/jszip
+- Sarabun font (SIL Open Font License 1.1) https://fonts.google.com/specimen/Sarabun

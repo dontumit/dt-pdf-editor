@@ -1,0 +1,79 @@
+/* สไตล์เฉพาะแผงผู้ดูแลระบบ — ต่อยอดจาก app.css */
+.admin-body { padding-bottom: 0; }
+
+.admin-tabs {
+  display: flex; gap: 6px; overflow-x: auto;
+  padding-block: 12px 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.admin-tabs::-webkit-scrollbar { display: none; }
+.admin-tab {
+  flex: none; padding: 9px 15px; border-radius: 999px;
+  font-size: 13.5px; font-weight: 600; white-space: nowrap;
+  background: var(--surface); border: 1.5px solid var(--border);
+  color: var(--text-muted); transition: all .15s;
+}
+.admin-tab[aria-selected="true"] {
+  background: linear-gradient(135deg, var(--brand), #b06ef0);
+  border-color: transparent; color: #fff;
+  box-shadow: 0 6px 16px -8px var(--brand);
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.metric {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 15px;
+  position: relative; overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.metric::after {
+  content: ""; position: absolute; right: -22px; top: -22px;
+  width: 76px; height: 76px; border-radius: 50%;
+  background: var(--metric-color, var(--brand)); opacity: .12;
+  filter: blur(2px);
+}
+.metric__label { font-size: 12.5px; color: var(--text-muted); margin-bottom: 5px; }
+.metric__value {
+  font-size: 25px; font-weight: 700; line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--metric-color, var(--text));
+}
+.metric__sub { font-size: 12px; color: var(--text-faint); margin-top: 4px; }
+
+.chart-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 16px; margin-bottom: 12px; }
+.chart-card__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.chart-card__head h3 { font-size: 15px; }
+.chart-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart-legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--text-muted); margin-top: 10px; }
+.chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.chart-legend i { width: 11px; height: 11px; border-radius: 4px; display: inline-block; }
+
+.bar-row { display: flex; align-items: center; gap: 11px; padding: 7px 0; }
+.bar-row__label { width: 130px; flex: none; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-row__track { flex: 1; height: 11px; border-radius: 999px; background: var(--surface-3); overflow: hidden; }
+.bar-row__fill { height: 100%; border-radius: 999px; transition: width .4s ease; }
+.bar-row__value { width: 62px; flex: none; text-align: right; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.gauge { display: flex; align-items: center; gap: 12px; }
+.gauge__track { flex: 1; height: 9px; border-radius: 999px; background: var(--surface-3); overflow: hidden; }
+.gauge__fill { height: 100%; border-radius: 999px; }
+
+.settings-row {
+  display: grid; grid-template-columns: 1fr 160px; gap: 12px; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+.settings-row:last-child { border-bottom: none; }
+.settings-row__label { font-size: 14px; font-weight: 600; }
+.settings-row__meta { font-size: 12px; color: var(--text-faint); }
+.settings-row input, .settings-row select { text-align: right; }
+@media (max-width: 560px) { .settings-row { grid-template-columns: 1fr; } .settings-row input { text-align: left; } }
+
+.admin-login { max-width: 400px; margin: 10vh auto; }

@@ -1,0 +1,68 @@
+# ============================================================
+# DT PDF Editor — Docker Compose
+#
+# บริการที่แยกกันชัดเจนตามสถาปัตยกรรม:
+#   app     = เว็บ + API (เสิร์ฟ frontend และรับคำขอทั้งหมด)
+#   worker  = ประมวลผลงานหนักฝั่งเซิร์ฟเวอร์ + ล้างไฟล์ชั่วคราว
+#   nginx   = reverse proxy, TLS, บีบอัด, จำกัดอัตราคำขอ (เปิดใช้ด้วย profile "proxy")
+#
+# เริ่มใช้งาน:
+#   cp .env.example .env  แล้วแก้ค่าให้ครบ
+#   docker compose up -d
+# ============================================================
+services:
+  app:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    image: dt-pdf-editor:latest
+    restart: unless-stopped
+    env_file: [.env]
+    environment:
+      # ปิด worker ในโปรเซสนี้ เพราะมี service worker แยกแล้ว
+      RUN_INLINE_WORKER: "false"
+      DATABASE_URL: file:/data/db/dtpdf.db
+      STORAGE_DIR: /data/storage
+    volumes:
+      - dtpdf-data:/data
+    ports:
+      - "127.0.0.1:8080:8080"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  worker:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    image: dt-pdf-editor:latest
+    restart: unless-stopped
+    command: ["node", "server/src/workers/standalone.js"]
+    env_file: [.env]
+    environment:
+      DATABASE_URL: file:/data/db/dtpdf.db
+      STORAGE_DIR: /data/storage
+    volumes:
+      - dtpdf-data:/data
+    depends_on:
+      app:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:1.27-alpine
+    profiles: ["proxy"]
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/nginx/dt-pdf-editor.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./deploy/nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - app
+
+volumes:
+  dtpdf-data:
