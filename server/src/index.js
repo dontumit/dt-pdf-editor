@@ -21,6 +21,7 @@ import { notFound, errorHandler } from './middleware/error.js';
 import { getSetting } from './services/settings.js';
 
 import authRoutes from './routes/auth.js';
+import webhookRoutes from './routes/webhook.js';
 import telemetryRoutes from './routes/telemetry.js';
 import webhookRoutes from './routes/webhook.js';
 import jobRoutes from './routes/jobs.js';
