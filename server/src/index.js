@@ -47,7 +47,10 @@ app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: false, limit: '1mb' }));
 app.use(cookieParser());
 app.use(sessionContext);
-app.use(csrfProtection);
+//app.use(csrfProtection);
+app.use(csrfProtection.unless([
+  { path: '/webhook/line', method: 'POST' }
+]));
 
 /** โหมดปิดปรับปรุงระบบ — ผู้ดูแลยังเข้าได้ */
 app.use((req, res, next) => {
